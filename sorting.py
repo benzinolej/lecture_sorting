@@ -30,7 +30,7 @@ def selection_sort(number_array, direction = "ascending"):
     :return: arraY
     """
 
-    delka_pole = len(number_array)
+    n = len(number_array)
     for i in range(n):
         min_max_i = i
         for num_ind in range(i+1, n):
@@ -45,6 +45,23 @@ def selection_sort(number_array, direction = "ascending"):
 
     return number_array
 
+def bubble_sort(number_array):
+    """
+
+    :param number_array:
+    :return:
+    """
+    n = len(number_array)
+    for i in range(n - 1):
+        for j in range(n - i - 1):
+            if number_array[j] > number_array[j + 1]:
+                number_array[j], number_array[j + 1] = number_array[j + 1], number_array[j]
+
+    return number_array
+
+
+
+
 
 
 
@@ -53,6 +70,9 @@ def main():
     print(data)
 
     print(selection_sort(data["series_1"]))
+
+    print(bubble_sort(data["series_2"]))
+
 
 if __name__ == '__main__':
     main()
