@@ -22,12 +22,37 @@ def read_data(file_name):
                     data[header].append(int(value))
     return data
 
+def selection_sort(number_array, directions = "ascending"):
+    """
+
+    :param number_array: list with numeric array
+    :param directions: string indicating sorting direction:ascending, descending
+    :return: arraY
+    """
+
+    delka_pole = len(number_array)
+    for i in range(n):
+        min_max_i = i
+        for num_ind in range(i+1, n):
+            if direction == "ascending":
+                if member_array[num_ind] < number_array[min_max_i]:
+                    min_max_i = num_ind
+                elif direction == "descending":
+                    if number_array[num_ind] > number_array[min_max_i]:
+                        min_max_i = num_ind
+
+        number_array[i], number_array[min_max_i] = number_array[min_max_i], number_array[i]
+
+    return number_array
+
 
 
 
 def main():
     data = read_data("numbers.csv")
     print(data)
+
+    print(selection_sort(data["series_1"]))
 
 if __name__ == '__main__':
     main()
